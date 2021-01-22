@@ -1,0 +1,315 @@
+body{
+    color:#4d4dae;
+	font: normal 18px Arial, Helvetica, sans-serif;
+	text-align:center;
+	background-color:white
+}
+
+#navbar{
+	background: #9cffbd;
+    border-bottom:5px #599cff solid;
+    border-top:5px #599cff solid;
+    width:100%;
+	letter-spacing:3px;
+	margin-top:20px;
+	padding:10px 0px
+}
+
+#navbar li{
+    list-style:none;
+    display:inline;
+    margin:auto;
+    padding:20px;
+}
+
+#navbar a{
+    text-decoration:none;
+    padding:10px 50px;
+    border:2px #1236bd solid;
+    border-radius:10px;
+    color:#000099
+}
+
+#navbar a:hover{
+    background:#4d4dae;
+    color:white
+}
+
+.nav-button{
+    font: normal 20px Arial, Helvetica, sans-serif;
+    background:#d1ffff
+}
+
+.curr-page{
+    font: bold 25px Arial, Helvetica, sans-serif;
+    background:#ffffff;
+}
+
+.login-form{
+    background-color:white;
+    font: normal 40px Arial, Helvetica, sans-serif;
+    text-align:center;
+    padding:20px 5px;
+    color:#0066ff
+}
+
+.login-form label{
+	display:block;
+	padding-bottom:30px
+}
+
+.login-form input[type="text"]{
+	padding:8px;
+	width:60%;
+	font: normal 25px Arial, Helvetica, sans-serif;
+}
+
+.login-button{
+    background-color:#0066ff;
+    color:white;
+   	padding:10px 15px;
+   	border:2px white solid;
+   	font: normal 25px Arial, Helvetica, sans-serif;
+}
+
+.container{
+    width:98%;
+    margin:auto;
+   	overflow:hidden;
+}
+
+.main{
+    margin:40px 80px;
+    background-color:white;
+    padding-bottom: 50px;
+}
+
+.welcome{
+    font: bold 36px Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding:15px;
+    padding-bottom:25px;
+    color:#4d4dae;
+    border-bottom: 8px #599cff solid;
+}
+
+#main-block h1{
+    font: bold 36px Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding:15px;
+    color:#4d4dae;
+}
+
+.next-games, .weather, .todo-side{
+    background-color:#9cffbd;
+    color:black;
+    float:right;
+    margin:4px;
+    margin-bottom:20px;
+    padding:10px;
+    border:4px #4d4dae solid;
+    border-radius:10px;
+    position:relative;
+    width:98%;
+    box-sizing:border-box;
+    padding-bottom:20px;
+    padding-top:1px
+}
+
+.weather{
+    background-color:white
+}
+
+.weather p{
+    margin-top:35px;
+    padding-bottom:5px;
+    font: normal 16px Arial, Helvetica, sans-serif;
+}
+
+.next-games .date-n-time{
+    margin-bottom:5px;
+    font: normal 16px Arial, Helvetica, sans-serif;
+}
+
+.team-logo-side{
+    position:absolute;
+    right:30px;
+    bottom:5px;
+    margin-left:15px;
+}
+
+.clr{
+	clear:both;
+}
+
+.headlines{
+    color:black;
+    padding:5px 25px;
+    margin:5px;
+}
+
+.team-logo{
+    position:absolute;
+    right:10px;
+    top:28px;
+    margin-left:15px;
+    margin-top:10px
+}
+
+.news-par{
+    color:black;
+    padding-left:50px;
+    padding-bottom:5px;
+    margin-right:90px
+}
+
+.news-timestamp{
+    font: normal 14px Arial, Helvetica, sans-serif;
+    padding-left:50px;
+}
+
+.one-story{
+    border:3px #4d4dae solid;
+    border-radius:10px;
+    margin:18px 40px;
+    margin-right:1px;
+    background-color:#e6fff2;
+    position:relative;
+    text-align:left
+}
+
+.team-news{
+    float:left;
+    width:90%
+}
+
+#main-block{
+    float:left;
+    width:77%;
+    background:white;
+    margin:5px;
+    margin-left:0px;
+    box-sizing:border-box
+}
+
+#main-block h1{
+    padding:1px;
+
+}
+
+#sidebar{
+    float:right;
+    width:21%;
+    margin-top:5px;
+    margin-right:8px;
+    box-sizing:border-box;
+    position:relative;
+    text-align:left
+}
+
+.image{
+    position:absolute;
+    top:5px;
+    right:25px;
+}
+
+.weather h2{
+    margin:15px;
+    font: bold 36px Arial, Helvetica, sans-serif;
+}
+
+.web-link{
+    margin-left:8px
+}
+
+/* 2 DO STFF */
+.todo-list{
+    font-family: erdana, Geneva, sans-serif;
+    margin:10px 50px
+}
+
+.todo-list h1{
+    padding-left:80px;
+    padding-right:50px;
+    float:left;
+    font-size:60px
+}
+
+.list-input{
+    font-size:40px;
+    margin:auto;
+    padding:40px;
+    text-align:center;
+}
+
+
+.list-input input[type="text"]{
+    padding:8px;
+    width:50%;
+}
+
+.list-input input[type="submit"]{
+    padding:8px;
+    font-size:18px;
+    background:#0066ff;
+    color:white;
+    border:2px white solid
+}
+
+.tasks{
+    margin:15px 0px;
+    padding:50px;
+    text-align:left
+}
+
+.tasks h3{
+    font-size:30px;
+}
+
+.incomplete-tasks{
+    border: 4px #ff2626 solid;
+    border-radius:10px;
+    padding:15px;
+    padding-left:50px;
+    font-size:20px;
+    margin:10px;
+    position:relative
+}
+
+.complete-tasks{
+    border: 5px #66ff66 solid;
+    border-radius:10px;
+    padding:15px;
+    padding-left:50px;
+    font-size:20px;
+    margin:10px;
+    position:relative
+}
+
+.done{
+     border: 2px red solid;
+     border-radius:10px;
+     padding:15px;
+     font-size:20px;
+     margin:10px;
+     position:absolute;
+     top:5px;
+     right:130px;
+     text-decoration:none
+ }
+
+.delete{
+     border: 2px blue solid;
+     border-radius:10px;
+     padding:15px;
+     font-size:20px;
+     margin:10px;
+     position:absolute;
+     top:5px;
+     right:10px;
+     text-decoration:none
+}
+
+.todo-side{
+    background:#cce6ff
+}

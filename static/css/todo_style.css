@@ -1,0 +1,81 @@
+body{
+    font-family: erdana, Geneva, sans-serif;
+    margin:10px 50px
+}
+
+body h1{
+    color:red;
+    border:5px gray solid;
+    padding-left:120px;
+    float:left;
+    font-size:60px
+}
+
+.list-input{
+    color:blue;
+    font-size:40px;
+    margin:auto;
+    border:5px gray solid;
+    padding:40px;
+    text-align:center
+}
+
+.list-input input[type="text"]{
+    padding:8px;
+    width:50%;
+}
+
+.list-input input[type="submit"]{
+    padding:8px;
+    font-size:18px
+}
+
+.tasks{
+    border: 5px green solid;
+    margin:15px 0px;
+    padding:50px
+}
+
+.tasks h3{
+    font-size:30px;
+}
+
+.incomplete-tasks{
+    border: 5px red solid;
+    padding:15px;
+    padding-left:50px;
+    font-size:20px;
+    margin:10px;
+    position:relative
+}
+
+.complete-tasks{
+    border: 5px green solid;
+    padding:15px;
+    padding-left:50px;
+    font-size:20px;
+    margin:10px;
+    position:relative
+}
+
+.incomplete-tasks .done{
+     border: 5px red solid;
+     padding:15px;
+     font-size:20px;
+     margin:10px;
+     position:absolute;
+     top:5px;
+     right:130px;
+     text-decoration:none
+ }
+
+.delete{
+     border: 5px blue solid;
+     padding:15px;
+     font-size:20px;
+     margin:10px;
+     position:absolute;
+     top:5px;
+     right:10px;
+     text-decoration:none
+}
