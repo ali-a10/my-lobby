@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <nav id="navbar">
+        <div class="container">
+            <ul class="nav">
+                <li><a class="curr-page" href="#">Home</a></li>
+                <li><a class="nav-button" href="todo">To-Do</a></li>
+                <li><a class="nav-button" href="#">Products</a></li>
+                <li><a class="nav-button" href="#">Sports</a></li>
+                <li><a class="nav-button" href="#">Links</a></li>
+                <li><a class="nav-button" href="logout">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="main">
+        {% with messages = get_flashed_messages() %} <!--displays youve logd out-->
+            {% if messages %}
+                {% for msg in messages %}
+                    <h4>{{msg}}</h4>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <h1 class="welcome">Welcome, {{username}}</h1>
+        <div id="main-block">
+            <h1> News</h1>
+            <div class="team-news">
+                {% for i in range(6) %}
+                    <div class="one-story">
+                        <h2 class="headlines">{{news_lst1[i][0].h1.text}}
+                            <img src={{news_lst1[i][1]}} class="team-logo"></h2>
+                        <div class="clr"></div>
+                        <p class="news-par">{{news_lst1[i][0].p.text}}</p>
+                        <p class="news-timestamp">{{news_lst1[i][0].div.span.text}}
+                            <a href={{news_lst1[i][2]}} target="_blank" class="web-link"> Full Article Here</a>
+                            <a href="https://www.espn.com/" target="_blank">
+                                <img src="static/images/espnlogo.png">
+                            </a>
+                        </p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+<!--        <div class="clr"></div>-->
+
+        <div id="sidebar">
+            <div class="weather">
+                <h2>{{temp}} <img src={{wthr_img}} class="image"></h2>
+                <p>{{time[:-4]}}</p>
+            </div>
+            <div class="next-games">
+                <h3>Next Game: {{next_game[0]}} vs {{next_game[1]}}</h3>
+                <p class="date-n-time">{{next_game[3]}} {{next_game[2]}}
+                    <img src="{{next_game[4]}}" class="team-logo-side">
+                </p>
+            </div>
+            <div class="next-games">
+                <h3>Next Game: {{next_game2[0]}}</h3>
+                <p class="date-n-time">{{next_game2[2]}} {{next_game2[1]}}
+                <img src="{{next_game2[3]}}" class="team-logo-side">
+                </p>
+            </div>
+            {% for j in todo %}
+                <div class="todo-side">
+                    <h3>To-Do: {{j.item}}</h3>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="clr"></div>
+    </div>
+
+
+{% endblock %}

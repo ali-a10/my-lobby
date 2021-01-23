@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <nav id="navbar">
+        <div class="container">
+            <ul class="nav">
+                <li><a class="nav-button" href="home">Home</a></li>
+                <li><a class="curr-page" href="todo">To-Do</a></li>
+                <li><a class="nav-button" href="#">Products</a></li>
+                <li><a class="nav-button" href="#">Sports</a></li>
+                <li><a class="nav-button" href="#">Links</a></li>
+                <li><a class="nav-button" href="logout">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+        {% with messages = get_flashed_messages() %} <!--displays youve logd out-->
+            {% if messages %}
+                {% for msg in messages %}
+                    <h4>{{msg}}</h4>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <div class="todo-list">
+            <h1>To-Do List</h1>
+            <div class="list-input">Add a new item:
+                <form action="/todo/add" method="POST">
+                    <input type="text" name="todoitem">
+                    <input type="submit" value="Add Item">
+                </form>
+            </div>
+            <div class="tasks">
+                <h3>Incomplete:</h3>
+                    <ul>
+                        {% for item in values %}
+                            {% if item.complete == False %}
+                                <div class="incomplete-tasks">
+                                    <li>
+                                        <p>{{item.item}}. . .{{item.id2}}</p>
+                                        <a href="{{ url_for('task_completed', id1=item.id2)}}" class="done">DONE</a>
+                                        <a href="{{ url_for('delete', del_id=item.id2)}}" class="delete">Delete</a>
+                                    </li>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+
+                <h3>Completed:</h3>
+                <ul>
+                    {% for item in values %}
+                        {% if item.complete == True %}
+                            <div class="complete-tasks">
+                                <li>
+                                    <p>{{item.item}}. . . {{item.id2}}</p>
+                                    <a href="{{ url_for('delete', del_id=item.id2)}}" class="delete">Delete</a>
+                                </li>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+{% endblock %}
