@@ -42,9 +42,7 @@
                 {% endfor %}
             </div>
         </div>
-
-<!--        <div class="clr"></div>-->
-
+        
         <div id="sidebar">
             <div class="weather">
                 <h2>{{temp}} <img src={{wthr_img}} class="image"></h2>
@@ -64,7 +62,8 @@
             </div>
             {% for j in todo %}
                 <div class="todo-side">
-                    <h3>To-Do: {{j.item}}</h3>
+                    <h3>To-Do: </h3>
+                    <h3>{{j.item}}</h3>
                 </div>
             {% endfor %}
         </div>
