@@ -36,7 +36,7 @@
                             {% if item.complete == False %}
                                 <div class="incomplete-tasks">
                                     <li>
-                                        <p>{{item.item}}. . .{{item.id2}}</p>
+                                        <p>{{item.item}}</p>
                                         <a href="{{ url_for('task_completed', id1=item.id2)}}" class="done">DONE</a>
                                         <a href="{{ url_for('delete', del_id=item.id2)}}" class="delete">Delete</a>
                                     </li>
@@ -51,7 +51,7 @@
                         {% if item.complete == True %}
                             <div class="complete-tasks">
                                 <li>
-                                    <p>{{item.item}}. . . {{item.id2}}</p>
+                                    <p>{{item.item}}</p>
                                     <a href="{{ url_for('delete', del_id=item.id2)}}" class="delete">Delete</a>
                                 </li>
                             </div>
