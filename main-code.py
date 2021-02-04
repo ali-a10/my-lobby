@@ -64,9 +64,9 @@ class Todo(db.Model):
 
 
 @app.route("/todo")
-def index():
+def todo():
     todos = Todo.query.all()
-    return render_template("index.html", values=todos)
+    return render_template("todolist.html", values=todos)
 
 
 @app.route("/todo/add", methods=["POST"])
@@ -74,7 +74,7 @@ def add():
     todo = Todo(item=request.form["todoitem"], complete=False)
     db.session.add(todo)
     db.session.commit()
-    return redirect(url_for("index"))
+    return redirect(url_for("todo"))
 
 
 @app.route("/todo/comp/<id1>")
@@ -82,14 +82,14 @@ def task_completed(id1):
     todo = Todo.query.filter_by(id2=int(id1)).first()
     todo.complete = True
     db.session.commit()
-    return redirect(url_for("index"))
+    return redirect(url_for("todo"))
 
 
 @app.route("/todo/del/<del_id>")
 def delete(del_id):
     todo = Todo.query.filter_by(id2=int(del_id)).delete()
     db.session.commit()
-    return redirect(url_for("index"))
+    return redirect(url_for("todo"))
 
 
 if __name__ == "__main__":
