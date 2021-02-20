@@ -36,12 +36,10 @@ def home_page():
         incomplete = Todo.query.filter_by(complete=False).all()
         return render_template("home.html", username=session["user"],
                                next_game=next_game, news_lst1=news_lst1,
-                               temp=temp,
-                               time=time, wthr_img=wthr_img,
+                               temp=temp, time=time, wthr_img=wthr_img,
                                team_img2=team_img2, next_game2=next_game2,
                                todo=incomplete, lst_len=len(incomplete))
-    else:
-        return redirect(url_for("login"))
+    return redirect(url_for("login"))
 
 
 @app.route("/logout")
@@ -58,10 +56,6 @@ class Todo(db.Model):
     item = db.Column(db.String(150))
     complete = db.Column(db.Boolean)
 
-    # def __init__(self, item):
-    #     self.item = item
-    #     self.completed = False
-
 
 @app.route("/todo")
 def todo():
@@ -71,23 +65,23 @@ def todo():
 
 @app.route("/todo/add", methods=["POST"])
 def add():
-    todo = Todo(item=request.form["todoitem"], complete=False)
-    db.session.add(todo)
+    todo_item = Todo(item=request.form["todoitem"], complete=False)
+    db.session.add(todo_item)
     db.session.commit()
     return redirect(url_for("todo"))
 
 
 @app.route("/todo/comp/<id1>")
 def task_completed(id1):
-    todo = Todo.query.filter_by(id2=int(id1)).first()
-    todo.complete = True
+    todo_item = Todo.query.filter_by(id2=int(id1)).first()
+    todo_item.complete = True
     db.session.commit()
     return redirect(url_for("todo"))
 
 
 @app.route("/todo/del/<del_id>")
 def delete(del_id):
-    todo = Todo.query.filter_by(id2=int(del_id)).delete()
+    Todo.query.filter_by(id2=int(del_id)).delete()
     db.session.commit()
     return redirect(url_for("todo"))
 
