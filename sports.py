@@ -53,17 +53,17 @@ team_img2 = "static/images/lakers.png"
 next_game2 = (opponent2, nxtgm_time2, nxtgm_date2, team_img2)
 
 
-# TORONTO NEWS
-url3 = 'https://globalnews.ca/toronto/'
+# # TORONTO NEWS
+# url3 = 'https://globalnews.ca/toronto/'
 
-uClient3 = urlopen(url3)  #downloads webpage
-page_html3 = uClient3.read()
-uClient3.close()
+# uClient3 = urlopen(url3)  #downloads webpage
+# page_html3 = uClient3.read()
+# uClient3.close()
 
-# html parsing
-page_soup3 = soup(page_html3, "html.parser")
+# # html parsing
+# page_soup3 = soup(page_html3, "html.parser")
 
-headline = page_soup3.findAll("span", {"class": "c-posts__headlineText"})
+# headline = page_soup3.findAll("span", {"class": "c-posts__headlineText"})
 
 
 news_lst = []
